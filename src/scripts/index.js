@@ -1,12 +1,11 @@
 import '../styles/index.scss';
 
-let car = {
-    id: 5000,
-    style: 'convertible'
-};
+function startCars(car1, car2, car3) {
+    console.log(car1, car2, car3);
+}
 
-// let { id, style } = car;
-let id, style;
-({ id, style } = car);
+let carIds = [100, 300, 500];
+startCars(...carIds);
 
-console.log(id, style);
+let carCodes = 'abc';
+startCars(...carCodes);
