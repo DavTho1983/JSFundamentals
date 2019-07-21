@@ -1,11 +1,14 @@
 import '../styles/index.scss';
 
-//Immediately Invoked Function Entity IIFE
+// Closures
 
 let app = (function() {
     let carId = 123;
-    console.log('in function');
-    return {};
+    let getId = function() {
+        return carId;
+    };
+    return {
+        getId: getId
+    };
 })();
-
-console.log(app);
+console.log(app.getId());
