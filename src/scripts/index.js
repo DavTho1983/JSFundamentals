@@ -4,17 +4,18 @@ import '../styles/index.scss';
 
 let o = {
     carId: 123,
-    getId: function(prefix) {
+    getId: function() {
         console.log(this);
-        return prefix + this.carId;
+        return this.carId;
     }
 };
 
 
 let newCar = { carId: 456 };
 
-console.log(o.getId.call(newCar));
+// bind
+// bind makes a copy of the function and changes this context
 
-// apply
+let newFn = o.getId.bind(newCar);
 
-console.log(o.getId.apply(newCar, ['ID: ']));
+console.log(newFn());
