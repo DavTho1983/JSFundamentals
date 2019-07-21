@@ -1,19 +1,11 @@
 import '../styles/index.scss';
 
-console.log((5 > 4) ? 'yes' : 'no');
+//Immediately Invoked Function Entity IIFE
 
-console.log(5 > 44 ? 'yes' : 'no');
+let app = (function() {
+    let carId = 123;
+    console.log('in function');
+    return {};
+})();
 
-//Function and block scope
-
-function startCar(carId) {
-    let message = 'Starting...';
-    let startFn = function turnKey() {
-        let message = 'Override...';
-        console.log(message); //finds variable in parent function unless overridden locally
-    };
-    startFn();
-    console.log(message);
-}
-
-startCar(123);
+console.log(app);
