@@ -1,11 +1,22 @@
 import '../styles/index.scss';
 
-function startCars(car1, car2, car3) {
-    console.log(car1, car2, car3);
+console.log(Number.parseInt('55asd'));
+console.log(Number.parseFloat('55.88asd'));
+
+let i = 0;
+
+for (; i < 12; i++) {
+    if (i === 8) {
+        break;
+    }
 }
 
-let carIds = [100, 300, 500];
-startCars(...carIds);
+console.log(i);
 
-let carCodes = 'abc';
-startCars(...carCodes);
+for (let j = 0; j < 4; j++) {
+    if (j === 2) {
+        continue;
+    }
+
+    console.log(j);
+}
