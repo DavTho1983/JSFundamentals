@@ -4,10 +4,17 @@ import '../styles/index.scss';
 
 let o = {
     carId: 123,
-    getId: function() {
+    getId: function(prefix) {
         console.log(this);
-        return this.carId;
+        return prefix + this.carId;
     }
 };
 
-console.log(o.getId());
+
+let newCar = { carId: 456 };
+
+console.log(o.getId.call(newCar));
+
+// apply
+
+console.log(o.getId.apply(newCar, ['ID: ']));
