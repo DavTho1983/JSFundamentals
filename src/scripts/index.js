@@ -1,21 +1,11 @@
-import '../styles/index.scss';
+import "../styles/index.scss";
 
-// this
-
-let o = {
-    carId: 123,
-    getId: function() {
-        console.log(this);
-        return this.carId;
+class Car {
+    constructor(id) {
+        this.id = id;
     }
-};
+}
 
-
-let newCar = { carId: 456 };
-
-// bind
-// bind makes a copy of the function and changes this context
-
-let newFn = o.getId.bind(newCar);
-
-console.log(newFn());
+let car = new Car(123);
+car.id = 456;
+console.log(car.id);
