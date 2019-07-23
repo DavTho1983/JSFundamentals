@@ -1,16 +1,24 @@
 import "../styles/index.scss";
 
-class Car {
-    constructor(id) {
-        this.id = id;
+class Vehicle {
+    constructor() {
+        this.type = "car";
     }
-
-    identify(suffix) {
-        return `Car Id: ${this.id} ${suffix}`;
+    start() {
+        return `Starting: ${this.type}`;
     }
 }
 
-let car = new Car(123);
-car.id = 456;
-console.log(car.id);
-console.log(car.identify("!!!"));
+class Car extends Vehicle {
+    constructor() {
+        super();
+    }
+
+    start() {
+        return "in Car start. " + super.start();
+    }
+}
+
+let car = new Car();
+console.log(car.type);
+console.log(car.start());
