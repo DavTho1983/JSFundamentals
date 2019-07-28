@@ -1,21 +1,30 @@
 import "../styles/index.scss";
-import { Car } from "./models/car";
 
-let form = document.getElementById("user-form");
+let obj = ["mince", "radishes", "paste", "mash", "gravy"];
 
-form.addEventListener("submit", event => {
-    let user = form.elements["user"];
-    let userError = document.getElementById("user-error");
+let pluralsobj = [];
 
-    if (user.value.length < 4) {
-        userError.textContent = "Invalid entry";
-        userError.style.color = "red";
-        user.style.borderColor = "red";
-        user.focus();
+for (let i = 0; i < 100; i++) {
+    pluralsobj.push(obj[Math.floor(Math.random() * obj.length)]);
+}
+
+console.log(pluralsobj);
+
+let uniqueobjs = [];
+for (let j = 0; j < pluralsobj.length; j++) {
+    if (!uniqueobjs.includes(pluralsobj[j])) {
+        uniqueobjs.push(pluralsobj[j]);
     }
+}
 
-    let avatarFile = form.elements["avatar-file"];
+let uniq = [...new Set(pluralsobj)];
+console.log(uniqueobjs);
+console.log(uniq);
 
-    console.log(user.value, avatarFile.value);
-    event.preventDefault();
-});
+function unique(a) {
+    return a.sort().filter(function(item, pos, ary) {
+        return !pos || item != ary[pos - 1];
+    });
+}
+
+console.log(unique(pluralsobj));
